@@ -1,12 +1,24 @@
 sap.ui.define([
-    "sap/ui/core/mvc/Controller"
+    "sap/ui/core/mvc/Controller",
+    "sap/ui/model/Filter",
+    "sap/ui/model/FilterOperator",
+    "sap/ui/model/Sorter"
 ],
-function (Controller) {
+function (Controller,Filter,FilterOperator,Sorter) {
     "use strict";
 
     return Controller.extend("project1.controller.View1", {
         onInit: function () {
               
+        },
+        onSearchEmp:function(oEvent){
+                   var value=oEvent.getParameter("newValue");
+                   var aFilters=[];
+                   if(value !== ""){
+                          var oFilter=new Filter("empName",FilterOperator.Contains,value);
+                          aFilters.push(oFilter);
+                   }
+                   this.getView().byId("daneshlist").getBinding("items").filter(aFilters);
         },
         onSelect:function(oEvent){
             var empId=oEvent.getParameter("listItem").getBindingContext().getPath();

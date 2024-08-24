@@ -43,23 +43,23 @@ function (UIComponent, Device, models,JSONModel) {
                 aEmployees: [
                     {
                         empId: "12345",
-                        empName: "Danesh",
+                        empName: "Deepak",
                         empEmail: "naikdanesh2@gmail.com",
                         empAddress: "sdkjflksd"
                     },
                     {
                         empId: "123456",
-                        empName: "Danesh",
+                        empName: "Mahaveer",
                         empEmail: "naikdanesh2@gmail.com",
                         empAddress: "sdkjflksd"
                     },{
                         empId: "1234567",
-                        empName: "Danesh",
+                        empName: "Vikas",
                         empEmail: "naikdanesh2@gmail.com",
                         empAddress: "sdkjflksd"
                     },{
                         empId: "1234568",
-                        empName: "Danesh",
+                        empName: "Rani",
                         empEmail: "naikdanesh2@gmail.com",
                         empAddress: "sdkjflksd"
                     }

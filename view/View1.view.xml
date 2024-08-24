@@ -23,6 +23,16 @@
           
           <List items="{/aEmployees}" headerText="Danesh Naik Batch" id="daneshlist" 
            mode="SingleSelectMaster" selectionChange="onSelect">
+           <headerToolbar>
+           
+              <Toolbar id="toolbar">
+              <ToolbarSpacer id="spacer"></ToolbarSpacer>
+              <Text text="Employees" id="headertext"></Text>
+              <SearchField id="searchField" width="30%" liveChange="onSearchEmp"></SearchField>
+              <Button icon="sap-icon://sort-ascending"></Button>
+              <Button icon="sap-icon://sort-descending"></Button>
+              </Toolbar>
+           </headerToolbar>
               <ObjectListItem title="{empName}" number="{empId}" numberUnit="{empEmail}">
                   <attributes>
                       <ObjectAttribute title="Employee Address" text="{empAddress}"></ObjectAttribute>
