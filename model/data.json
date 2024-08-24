@@ -1,0 +1,21 @@
+{
+    "empId": "",
+    "empName": "",
+    "empEmail": "",
+    "empAddress": "",
+    "coutryname": [
+        {"country": "India"},
+        {"country": "Japan"},
+        {"country": "Singapore"},
+        {"country": "Deepak"},
+        {"country": "Danesh"}
+    ],
+    "aEmployees": [
+        {
+            "empId": "12345",
+            "empName": "Danesh",
+            "empEmail": "naikdanesh2@gmail.com",
+            "empAddress": "sdkjflksd"
+        }
+    ]
+}

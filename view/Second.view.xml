@@ -1,0 +1,20 @@
+<mvc:View controllerName="project1.controller.Second"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:form="sap.ui.layout.form" xmlns:core="sap.ui.core">
+    <Page id="page" title="{i18n>title}">
+       <content>
+              <form:SimpleForm id="simpleform">
+                 <form:content>
+                      <Label text="Employee Id" id="IdLabel"></Label>
+                   <Text  id="empTxtId" text="{empId}" ></Text>
+                   <Label text="Employee Name" id="nameLabel"></Label>
+                   <Text  id="empTxtName" text="{empName}"></Text>
+                   <Label text="Employee Email" id="emailLable"></Label>
+                   <Text  id="empTxtEmail" text="{empEmail}" ></Text>
+                   <Label text="Employee Address" id="addressLabel"></Label>
+                   <Text  id="empTxtAddress" text="{empAddress}" ></Text>
+                 </form:content>
+              </form:SimpleForm>
+       </content>
+    </Page>
+</mvc:View>

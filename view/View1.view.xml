@@ -1,0 +1,41 @@
+<mvc:View controllerName="project1.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:form="sap.ui.layout.form" xmlns:core="sap.ui.core">
+    <Page id="page" title="{i18n>title}">
+       <content>
+          <form:SimpleForm id="formSimpleForm" title="Employee Form" emptySpanM="4" emptySpanL="4" editable="true"
+           labelSpanL="3" labelSpanM="3">
+              <form:content>
+                   <Label text="Employee Id" id="IdLabel"></Label>
+                   <Input required="true" id="empId" value="{/empId}" type="Number"></Input>
+                   <Label text="Employee Name" id="nameLabel"></Label>
+                   <Input required="true" id="empName" value="{/empName}" type="Text"></Input>
+                   <Label text="Employee Email" id="emailLable"></Label>
+                   <Input required="true" id="empEmail" value="{/empEmail}" type="Email"></Input>
+                   <Label text="Employee Address" id="addressLabel"></Label>
+                   <Input required="true" id="empAddress" value="{/empAddress}" type="Text"></Input>
+                   <Label text="Select Country" id="countrylabel"></Label>
+                   <ComboBox id="countrynames" items="{/coutryname}">
+                      <core:Item text="{country}" id="countryn"/>
+                   </ComboBox>
+              </form:content>
+          </form:SimpleForm>
+          
+          <List items="{/aEmployees}" headerText="Danesh Naik Batch" id="daneshlist" 
+           mode="SingleSelectMaster" selectionChange="onSelect">
+              <ObjectListItem title="{empName}" number="{empId}" numberUnit="{empEmail}">
+                  <attributes>
+                      <ObjectAttribute title="Employee Address" text="{empAddress}"></ObjectAttribute>
+                  </attributes>
+              </ObjectListItem>
+          </List>
+       </content>
+       <footer>
+          <Bar id="bottomBar">
+              <contentRight>
+                 <Button id="btnSubmit" text="Submit" type="Emphasized" press="onSubmit"></Button>
+              </contentRight>
+          </Bar>
+       </footer>
+    </Page>
+</mvc:View>
