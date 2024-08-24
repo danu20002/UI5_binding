@@ -3,7 +3,21 @@
     xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:form="sap.ui.layout.form" xmlns:core="sap.ui.core">
     <Page id="page" title="{i18n>title}">
        <content>
-          <form:SimpleForm id="formSimpleForm" title="Employee Form" emptySpanM="4" emptySpanL="4" editable="true"
+          
+
+            <form:SimpleForm id="gg" title="Employee Form" emptySpanM="4" emptySpanL="4" editable="true"
+           labelSpanL="3" labelSpanM="3"> 
+               <form:content>
+                      <Label id="idLabel" text="Employee Id"></Label>
+                      <Input id="idIpEmp" showValueHelp="true" valueHelpRequest="onValuePress"></Input>
+               </form:content>
+                  
+            </form:SimpleForm>
+
+
+
+<!-- 
+<form:SimpleForm id="formSimpleForm" title="Employee Form" emptySpanM="4" emptySpanL="4" editable="true"
            labelSpanL="3" labelSpanM="3">
               <form:content>
                    <Label text="Employee Id" id="IdLabel"></Label>
@@ -24,21 +38,59 @@
           <List items="{/aEmployees}" headerText="Danesh Naik Batch" id="daneshlist" 
            mode="SingleSelectMaster" selectionChange="onSelect">
            <headerToolbar>
-           
               <Toolbar id="toolbar">
               <ToolbarSpacer id="spacer"></ToolbarSpacer>
               <Text text="Employees" id="headertext"></Text>
               <SearchField id="searchField" width="30%" liveChange="onSearchEmp"></SearchField>
-              <Button icon="sap-icon://sort-ascending"></Button>
-              <Button icon="sap-icon://sort-descending"></Button>
+              <Button icon="sap-icon://sort-ascending" press="sortAsc" id="ascbtn"></Button>
+              <Button icon="sap-icon://sort-descending" press="sortdes" id="deSbtn"></Button>
               </Toolbar>
            </headerToolbar>
-              <ObjectListItem title="{empName}" number="{empId}" numberUnit="{empEmail}">
+              <ObjectListItem title="{empName}" number="{empId}" numberUnit="{empEmail}" id="objlist">
                   <attributes>
-                      <ObjectAttribute title="Employee Address" text="{empAddress}"></ObjectAttribute>
+                      <ObjectAttribute title="Employee Address" text="{empAddress}" id="objattribute1"></ObjectAttribute>
                   </attributes>
               </ObjectListItem>
           </List>
+
+          
+        <Table id="idListEmp" items="{/aEmployees}" mode="SingleSelectMaster" selectionChange="onselectEmp" growing="true">
+            <headerToolbar>
+                <Toolbar id="toolbartable">
+                    <Text text="Employees Table" id="headertext1"></Text>
+                    <ToolbarSpacer id="spacertable"></ToolbarSpacer>
+                    <SearchField id="searchField2" width="30%" liveChange="onSearchEmp"></SearchField>
+                    <Button icon="sap-icon://sort-ascending" id="btnasc" press="sortAsc"></Button>
+                    <Button icon="sap-icon://sort-descending" press="sortdes" id="desbtn"></Button>
+                </Toolbar>
+            </headerToolbar>
+
+            <columns>
+                <Column id="column1">
+                    <Text text="Employee Id"></Text>
+                </Column>
+                <Column id="column2">
+                    <Text text="Employee Name"></Text>
+                </Column>
+                <Column id="column3">
+                    <Text text="Employee Email"></Text>
+                </Column>
+                <Column id="column4">
+                    <Text text="Employee Address"></Text>
+                </Column>
+            </columns>
+
+            <items>
+                <ColumnListItem>
+                    <cells>
+                        <Text text="{empId}"></Text>
+                        <Text text="{empName}"></Text>
+                        <Text text="{empEmail}"></Text>
+                        <Text text="{empAddress}"></Text>
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table> -->
        </content>
        <footer>
           <Bar id="bottomBar">

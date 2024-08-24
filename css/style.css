@@ -1,4 +1,30 @@
-/* Enter your custom styles here */
-.mytextcolor{
-    color: red;
+/* Add border to the entire table */
+#idListEmp {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+/* Add border to the table columns */
+#idListEmp .sapUiTableCell {
+    border-right: 1px solid #ccc; /* Light gray border for column separation */
+}
+
+/* Remove the right border from the last column to avoid double borders */
+#idListEmp .sapUiTableCell:last-child {
+    border-right: none;
+}
+
+/* Add border to rows */
+#idListEmp .sapUiTableRow {
+    border-bottom: 1px solid #ccc; /* Light gray border for row separation */
+}
+
+/* Add border to the header row */
+#idListEmp .sapUiTableHdr {
+    border-bottom: 2px solid #000; /* Black border for the header row */
+}
+
+/* Optional: Add padding to cells for better spacing */
+#idListEmp .sapUiTableCell {
+    padding: 8px;
 }

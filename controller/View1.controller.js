@@ -11,6 +11,32 @@ function (Controller,Filter,FilterOperator,Sorter) {
         onInit: function () {
               
         },
+        onValuePress: function () {
+            if (!this._dialog) {
+                this._dialog = sap.ui.xmlfragment(this.getView().getId(), "project1.view.EmpF4", this);
+                this.getView().addDependent(this._dialog);  // Add the dialog as a dependent of the view
+            }
+            this._dialog.open();  // Open the dialog
+        },
+        onselectF4:function(oEvent){
+               var empId=oEvent.getParameter("listItem").getBindingContext().getProperty("empId");
+               this.getView().byId("idIpEmp").setValue(empId);
+               this._dialog.close();
+        },
+        onClose:function(){
+              this._dialog.close();
+        },
+        sortAsc:function(){
+           var oSoeter=new Sorter("empName",false);
+           this.getView().byId("idListEmp").getBinding("items").sort(oSoeter);
+          // this.getView().byId("daneshlist").getBinding("items").sort(oSoeter);
+
+        },
+        sortdes:function(){
+              var oSorter=new Sorter("empName",true);
+              this.getView().byId("idListEmp").getBinding("items").sort(oSorter);
+             // this.getView().byId("daneshlist").getBinding("items").sort(oSorter);
+        },
         onSearchEmp:function(oEvent){
                    var value=oEvent.getParameter("newValue");
                    var aFilters=[];
@@ -18,7 +44,8 @@ function (Controller,Filter,FilterOperator,Sorter) {
                           var oFilter=new Filter("empName",FilterOperator.Contains,value);
                           aFilters.push(oFilter);
                    }
-                   this.getView().byId("daneshlist").getBinding("items").filter(aFilters);
+                  // this.getView().byId("daneshlist").getBinding("items").filter(aFilters);
+                   this.getView().byId("idListEmp").getBinding("items").filter(aFilters);
         },
         onSelect:function(oEvent){
             var empId=oEvent.getParameter("listItem").getBindingContext().getPath();
