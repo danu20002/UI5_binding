@@ -57,7 +57,9 @@
         "settings": {
           "bundleName": "project1.i18n.i18n"
         }
-      }
+      },
+      "aEmployees":{"type": "sap.ui.model.json.JSONModel",
+      "uri": "model/data.json"}
     },
     "resources": {
       "css": [

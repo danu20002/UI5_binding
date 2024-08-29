@@ -9,7 +9,8 @@ function (Controller,Filter,FilterOperator,Sorter) {
 
     return Controller.extend("project1.controller.View1", {
         onInit: function () {
-              
+            var oModel = this.getOwnerComponent().getModel("aEmployees");
+            this.getView().setModel(oModel);
         },
         onValuePress: function () {
             if (!this._dialog) {
@@ -55,7 +56,7 @@ function (Controller,Filter,FilterOperator,Sorter) {
               });
 
         },
-        onSubmit:function(){
+        onSubmit:function(oEvent){
         //   var EmpId=this.getView().byId("empId").getValue();
         //   var EmpName=this.getView().byId("empName").getValue();
         //   var EmpEmail=this.getView().byId("empEmail").getValue();
@@ -65,8 +66,10 @@ function (Controller,Filter,FilterOperator,Sorter) {
         //   this.getOwnerComponent().getModel().setProperty("/empEmail",EmpEmail);
         //   this.getOwnerComponent().getModel().setProperty("/empName",EmpName);
         //   this.getOwnerComponent().getModel().setProperty("/empAddress",EmpAddress);
-         
-          this.getOwnerComponent().getRouter().navTo("RootView2");
+          
+          this.getOwnerComponent().getRouter().navTo("RootView2",{
+            Index:2
+          });
           
    
            

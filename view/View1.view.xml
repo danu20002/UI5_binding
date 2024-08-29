@@ -16,7 +16,7 @@
 
 
 
-<!-- 
+
 <form:SimpleForm id="formSimpleForm" title="Employee Form" emptySpanM="4" emptySpanL="4" editable="true"
            labelSpanL="3" labelSpanM="3">
               <form:content>
@@ -35,7 +35,7 @@
               </form:content>
           </form:SimpleForm>
           
-          <List items="{/aEmployees}" headerText="Danesh Naik Batch" id="daneshlist" 
+          <!-- <List items="{/aEmployees}" headerText="Danesh Naik Batch" id="daneshlist" 
            mode="SingleSelectMaster" selectionChange="onSelect">
            <headerToolbar>
               <Toolbar id="toolbar">

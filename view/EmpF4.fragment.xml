@@ -1,6 +1,6 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
     <Dialog title="Select Employee" id="dialog">
-        <Table id="idListEmp" items="{/aEmployees}" mode="SingleSelectMaster" selectionChange="onselectF4" growing="true" >
+        <Table id="idListEmp" items="{/aEmployees}" mode="SingleSelectMaster" selectionChange="onselectF4" growing="true">
             <headerToolbar>
                 <Toolbar id="toolbartable">
                     <Text text="Employees Table" id="headertext1" />
